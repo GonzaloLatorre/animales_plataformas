@@ -20,6 +20,10 @@ export class AuthService {
     return this.auth.signOut()
   }
 
+  get user(){
+    return this.auth.authState
+  }
+
   firebaseErrors(error: string): string{
     switch (error) {
       case 'auth/invalid-email':

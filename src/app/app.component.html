@@ -15,20 +15,26 @@
             Animales
          </ion-item>
         
-         <ion-item routerLink="/login">
+         <ion-item *ngIf="!user" routerLink="/login">
            <ion-icon name="person"></ion-icon>
             LogIn
          </ion-item>
                
-         <ion-item routerLink="/registro">
+         <ion-item *ngIf="!user" routerLink="/registro">
            <ion-icon name="person"></ion-icon>
           Register
          </ion-item>
 
-         <ion-item (click)="cerrarSesion()">
+         <ion-item *ngIf="user" routerLink="/subir-animal">
+          <ion-icon name="add-outline"></ion-icon>
+          Subir animal
+         </ion-item>
+
+         <ion-item *ngIf="user" (click)="cerrarSesion()">
           <ion-icon name="log-out-outline"></ion-icon>
          Cerrar sesión
         </ion-item>
+
        </ion-menu-toggle>
       </ion-list>
     </ion-content>

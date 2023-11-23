@@ -8,7 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private authService: AuthService, private router: Router) {}
+  user: any
+
+  constructor(private authService: AuthService, private router: Router) {
+    this.authService.user.subscribe(user => this.user = user)
+  }
 
   cerrarSesion(){
     this.authService.logout()

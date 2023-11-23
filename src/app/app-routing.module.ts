@@ -15,10 +15,14 @@ const routes: Routes = [
     loadChildren: () => import('./animales/animales.module').then( m => m.AnimalesPageModule)
   },
   {
+    path: 'subir-animal',
+    loadChildren: () => import('./subir-animal/subir-animal.module').then( m => m.SubirAnimalPageModule)
+  },
+  {
     path: '**',
     redirectTo: 'animales',
     pathMatch: 'full'
-  }
+  },
 ];
 
 @NgModule({
