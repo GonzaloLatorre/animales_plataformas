@@ -12,6 +12,6 @@ export class UsuariosService {
   }
 
   async createUser(data: any){
-    await this.database.doc(data.id).set(data)
+    await this.usuariosCollection.doc(data.id).set(data)
   }
 }

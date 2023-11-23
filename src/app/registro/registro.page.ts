@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../shared/services/auth.service';
 import { UsuariosService } from '../shared/services/usuarios.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -18,7 +19,7 @@ export class RegistroPage implements OnInit {
   showErrorMsg: boolean = false
   showSuccessMsg: boolean = false
 
-  constructor(private authService: AuthService, private usuariosService: UsuariosService) { }
+  constructor(private authService: AuthService, private usuariosService: UsuariosService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -31,6 +32,7 @@ export class RegistroPage implements OnInit {
       this.msgContent = 'Se registro al usuario'
       this.showSuccessMsg = true
       this.showErrorMsg = false
+      this.router.navigate(['/animales'])
     })
     .catch(error => {
       this.msgContent = this.authService.firebaseErrors(error.code)
