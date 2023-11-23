@@ -5,10 +5,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="container">
+  <form (ngSubmit)="onSubmit()" class="container">
     <h2>Iniciar sesión</h2>
-    <ion-input label="Email" type="email" label-placement="floating" fill="outline"></ion-input>
-    <ion-input label="Contraseña" type="password" label-placement="floating" fill="outline"></ion-input>
-    <ion-button expand="block">Ingresar</ion-button>
-  </div>
+    <ion-input [(ngModel)]="data.email" name="email" label="Email" type="email" label-placement="floating" fill="outline"></ion-input>
+    <ion-input [(ngModel)]="data.password" name="password" label="Contraseña" type="password" label-placement="floating" fill="outline"></ion-input>
+    <ion-button type="submit" expand="block">Ingresar</ion-button>
+  </form>
 </ion-content>

@@ -15,7 +15,8 @@ export class RegistroPage implements OnInit {
     password: ''
   }
   msgContent!: string
-  showMsg: boolean = false
+  showErrorMsg: boolean = false
+  showSuccessMsg: boolean = false
 
   constructor(private authService: AuthService, private usuariosService: UsuariosService) { }
 
@@ -28,11 +29,12 @@ export class RegistroPage implements OnInit {
       this.data.id = user.user!.uid
       this.usuariosService.createUser(this.data)
       this.msgContent = 'Se registro al usuario'
-      this.showMsg = true
+      this.showSuccessMsg = true
+      this.showErrorMsg = false
     })
     .catch(error => {
       this.msgContent = this.authService.firebaseErrors(error.code)
-      this.showMsg = true
+      this.showErrorMsg = true
     })
   }
 }

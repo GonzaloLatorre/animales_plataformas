@@ -8,7 +8,8 @@
   <form (ngSubmit)="onSubmit()" class="container">
     <h2>Registarse</h2>
 
-    <span *ngIf="showMsg" style="color: red;">{{msgContent}}</span>
+    <span *ngIf="showErrorMsg" style="color: red;">{{msgContent}}</span>
+    <span *ngIf="showSuccessMsg" style="color: green;">{{msgContent}}</span>
 
     <ion-input [(ngModel)]="data.username" name="username" label="Nombre de usuario" type="text" label-placement="floating" fill="outline"></ion-input>
     <ion-input [(ngModel)]="data.email" label="Email" name="email" type="email" label-placement="floating" fill="outline"></ion-input>
