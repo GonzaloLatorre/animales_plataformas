@@ -1,10 +1,14 @@
 
 <ion-content [fullscreen]="true">
-  <div class="container">
+  <form (ngSubmit)="onSubmit()" class="container">
     <h2>Registarse</h2>
-    <ion-input label="Nombre de usuario" type="text" label-placement="floating" fill="outline"></ion-input>
-    <ion-input label="Email" type="email" label-placement="floating" fill="outline"></ion-input>
-    <ion-input label="Contraseña" type="password" label-placement="floating" fill="outline"></ion-input>
-    <ion-button expand="block">Registrarse</ion-button>
-  </div>
+
+    <span *ngIf="showErrorMsg" style="color: red;">{{msgContent}}</span>
+    <span *ngIf="showSuccessMsg" style="color: green;">{{msgContent}}</span>
+
+    <ion-input [(ngModel)]="data.username" name="username" label="Nombre de usuario" type="text" label-placement="floating" fill="outline"></ion-input>
+    <ion-input [(ngModel)]="data.email" label="Email" name="email" type="email" label-placement="floating" fill="outline"></ion-input>
+    <ion-input [(ngModel)]="data.password" label="Contraseña" name="password" type="password" label-placement="floating" fill="outline"></ion-input>
+    <ion-button type="submit" expand="block">Registrarse</ion-button>
+  </form>
 </ion-content>
