@@ -20,5 +20,7 @@ export class SubirAnimalPage implements OnInit {
 
   onSubmit(){
     this.animalService.createAnimal(this.data)
+    .then(() => alert('Se subio al animal'))
+    .catch(() => alert('Hubo un error al subir al animal'))
   }
 }
