@@ -11,7 +11,7 @@ export class UsuariosService {
     this.usuariosCollection = this.database.collection<any>('usuarios')
   }
 
-  async createUser(data: any){
-    await this.usuariosCollection.doc(data.id).set(data)
+  createUser(data: any){
+    return this.usuariosCollection.doc(data.id).set(data)
   }
 }
