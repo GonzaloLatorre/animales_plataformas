@@ -17,6 +17,4 @@ export class AnimalesPage implements OnInit {
   ngOnInit(){
     this.animalService.getAnimalCollection().subscribe(data => {this.animales = data;})
   }
-
-  
 }
