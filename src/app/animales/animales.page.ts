@@ -18,5 +18,7 @@ export class AnimalesPage implements OnInit {
     this.animalService.getAnimalCollection().subscribe(data => {this.animales = data;})
   }
 
-  
+  eliminarAnimal(id: string){
+    this.animalService.deleteAnimal(id);
+  }
 }
