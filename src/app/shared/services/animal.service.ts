@@ -16,4 +16,12 @@ export class AnimalService {
 
     await this.animalesCollection.doc(id).set({id, ...data})
   }
+
+  getAnimalCollection(){
+    return this.database.collection('animales').valueChanges()
+  }
+  
+  deleteAnimal(id:string){
+    return this.database.doc(`animales/${id}`).delete()
+  }
 }
