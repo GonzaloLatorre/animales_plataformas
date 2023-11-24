@@ -1,12 +1,7 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Mis Tarjetas</ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content>
 
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/subir-animal">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
@@ -16,7 +11,7 @@
     <ion-row>
       <ion-col size="6" *ngFor="let animal of animales">
         <ion-card>
-          <img [src]="animal.img">
+          <img [src]="animal.img" style="width: 100%;">
           <ion-card-header>
             <ion-card-title>{{animal.nombre}}</ion-card-title>
           </ion-card-header>
@@ -24,14 +19,6 @@
           <ion-card-content>
             {{animal.descripcion}}
           </ion-card-content>
-
-          <ion-button fill="clear">
-            <ion-icon name="create" slot="start"></ion-icon>
-          </ion-button>
-
-          <ion-button fill="clear" color="danger">
-            <ion-icon name="trash" slot="start"></ion-icon>
-          </ion-button>
         </ion-card>
       </ion-col>
     </ion-row>

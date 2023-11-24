@@ -1,0 +1,30 @@
+
+
+
+
+
+<ion-content [fullscreen]="true">
+  
+
+
+  <div class="container-cards">
+    <ion-card *ngFor="let animal of animals">
+      <img style="width: 100%;" alt="Silhouette of mountains" [src]="animal.img" />
+      <ion-card-header>
+      <ion-card-title>{{animal.nombre}}</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{animal.descripcion}}
+      </ion-card-content>
+
+    
+      <ion-button (click)="editAnimal(animal.id)" fill="clear">Editar</ion-button>
+      <ion-button (click)="deleteAnimal(animal.id)" fill="clear">Eliminar</ion-button>
+    </ion-card>
+  </div>
+</ion-content>
+
+
+
+

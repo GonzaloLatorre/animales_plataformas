@@ -19,6 +19,14 @@ const routes: Routes = [
     loadChildren: () => import('./subir-animal/subir-animal.module').then( m => m.SubirAnimalPageModule)
   },
   {
+    path: 'mis-animales',
+    loadChildren: () => import('./mis-animales/mis-animales.module').then( m => m.MisAnimalesPageModule)
+  },
+  {
+    path: 'edit-animal/:id',
+    loadChildren: () => import('./edit-animal/edit-animal.module').then( m => m.EditAnimalPageModule)
+  },
+  {
     path: '**',
     redirectTo: 'animales',
     pathMatch: 'full'

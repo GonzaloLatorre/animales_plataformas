@@ -25,6 +25,10 @@
           Register
          </ion-item>
 
+         <ion-item *ngIf="user" routerLink="/mis-animales">
+          Mis animales
+         </ion-item>
+
          <ion-item *ngIf="user" routerLink="/subir-animal">
           <ion-icon name="add-outline"></ion-icon>
           Subir animal
